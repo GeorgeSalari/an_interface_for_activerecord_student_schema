@@ -1,5 +1,4 @@
 require './db/config'
-require 'faker'
 
 class Student < ActiveRecord::Base
   def self.create_ten_students
@@ -9,12 +8,13 @@ class Student < ActiveRecord::Base
                   name.split
                   cell.first_name = name[0]
                   cell.last_name = name[1]
-                  cell.email = Faker::Internet.email
+                  cell.gender = ['male','femele'].sample
                   cell.birthday = Faker::Date.birthday(17, 21)
+                  cell.email = Faker::Internet.email
                   cell.phone = Faker::PhoneNumber.phone_number
-                  cell.teacher_id = rand(1..9)
                 end
 
       student.save
     end
+  end
 end
