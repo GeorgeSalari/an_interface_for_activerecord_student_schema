@@ -1,8 +1,6 @@
 require 'rake'
 require 'rspec/core/rake_task'
 require_relative 'db/config'
-require_relative 'lib/students_importer'
-require_relative 'app/models/teacher'
 
 desc "create the database"
 task "db:create" do
